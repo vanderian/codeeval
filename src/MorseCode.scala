@@ -48,5 +48,7 @@ object MorseCode extends App {
     "-----" -> "0"
   )
 
-  print(lines.map(_.split("  ").map(_.split(" ").map(code(_)).mkString).mkString(" ")).mkString("\n"))
+  for (l <- lines) {
+    println(l.split("  ").map(_.split(" ").map(code(_)).mkString).mkString(" "))
+  }
 }

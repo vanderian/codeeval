@@ -11,5 +11,9 @@ object CapitalizeWords extends App {
     "1st thing"
   )
 
+  for (l <- lines) {
+    val s = l.split(" ")
+    println(s.map(_.capitalize).mkString(" "))
+  }
   lines.foreach(l => println(l.split(" ").map(_.capitalize).mkString(" ")))
 }

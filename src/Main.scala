@@ -16,12 +16,14 @@ object Main extends App {
     "2131",
     "370"
   )
-  lines.foreach(l =>
-    println(if (isArmstrong(l)) "True" else "False")
-  )
+
+  println(Range(1, 99, 2).mkString("\n"))
+//  lines.foreach(l =>
+//    println(if (isArmstrong(l)) "True" else "False")
+//  )
 
   def makeFunc(l: String) = {
-    val s = l.split(" ")
+    val s = l.split(" ").to
     s(0) match {
       case "SetRow" => setRow(s(1).toInt, s(2).toInt) _
       case "SetCol" => setCol(s(1).toInt, s(2).toInt) _

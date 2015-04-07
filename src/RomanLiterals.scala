@@ -25,18 +25,18 @@ object RomanLiterals extends App {
       case List() => acc
       case head::tail =>
         val s = getLiteral(head.asDigit, index)
-        iter(tail, index - 1, acc + s)
+        iter(tail, index + 1, s + acc)
     }
-    iter(num.toList, num.length - 1, "")
+    iter(num.toList.reverse, 0, "")
   }
 
   def getLiteral(decimal: Int, index:Int): String = {
     def iter(num: Int, acc: String): String = num match {
       case 0 => acc
       case x if (1 to 3).contains(x) => iter(x-1, acc + literals(index)(0))
-      case 4 => iter(0, acc + literals(index)(1))
+      case 4 => literals(index)(1)
       case x if (5 to 8).contains(x) => iter(x-5, acc + literals(index)(2))
-      case 9 => iter(0, acc + literals(index)(3))
+      case 9 => literals(index)(3)
     }
     iter(decimal, "")
   }
