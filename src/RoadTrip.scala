@@ -1,5 +1,3 @@
-import scala.collection.mutable
-
 /**
  * User: vander
  * Date: 3/16/15
@@ -14,7 +12,7 @@ object RoadTrip extends App {
   for (l <- lines) {
     val sorted = l.dropRight(1).split("(; )?\\w+,").filter(!_.isEmpty).map(_.toInt).sorted
     var last = 0
-    val res = mutable.ListBuffer.empty[Int]
+    val res = scala.collection.mutable.ListBuffer.empty[Int]
     for (d <- sorted) {
       res += d - last
       last = d
