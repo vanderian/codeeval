@@ -1,7 +1,7 @@
 package easy
 
 /**
- * Created by vander on 3/16/15.
+ * Creatted by vander on 3/16/15.
  */
 object EvenNumbers extends App {
   var lines = Array[String](
